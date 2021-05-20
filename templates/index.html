@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+
+{%block content%}
+    <h1>My Event List</h1>
+    {%for event in events%}
+    <div>
+        <p>
+            {{ event.name }} : {{event.date}} : {{event.no_guests}} : {{event.location}} : {{event.description}} : 
+            {%if event.recurring == True:%}
+                <span>&#128260</span>
+            {% else %}
+                <span>&#128405</span>
+            {%endif%}
+        </p>
+    </div>
+    {%endfor%}
+
+{%endblock%}

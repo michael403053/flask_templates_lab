@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block content%}
+    <h1>Add New Event</h1>
+    <form action="/events" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date">
+
+        <label for="no_guests">Number of Guests</label>
+        <input type="text" id="no_guests" name="no_guests">
+
+        <label for="location">Location</label>
+        <input type="text" id='location' name='location'>
+        
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="2"></textarea>
+
+        <label for="recurring">Recurring?</label>
+        <input type="checkbox" id='recurring' name='recurring' checked="True">
+
+        <input type="submit" value="Add Event">
+    
+    </form>
+
+{%endblock%}
