@@ -10,8 +10,14 @@
                 <span>&#128260</span>
             {% else %}
                 <span>&#128405</span>
-            {%endif%}
-        </p>
+            {%endif%} 
+        </p> <br>
+
+       
+      
+            <p><a href="/events/delete/{{events.index(event)}}">DELETE EVENT</a></p>
+            <!-- <p> <button type="submit" value="Delete Event" name={{event.name}}>DELETE EVENT</button> </p> -->
+        
     </div>
     {%endfor%}
 

@@ -1,7 +1,8 @@
+from os import name
 from flask import render_template, request, redirect
 from app import app
 from models.event import Event
-from models.event_list import events, add_new_event
+from models.event_list import events, add_new_event, remove_event
 
 @app.route('/events')
 def index():
@@ -24,6 +25,20 @@ def add_new_event_from_form():
         recurring = True
     else: recurring = False
 
+    add_new_event(Event(event_date, event_name, no_guests, location, description, recurring))
+    return redirect('/events')
+
+
+@app.route("/events/delete/<index>")
+def delete_event_button(index):
+    remove_event(events[int(index)])
+
+
+    # for event in events:
+    #     if event.name == 
+  
+    return redirect('/events')
+
 
 
 
@@ -33,6 +48,5 @@ def add_new_event_from_form():
     # else: recurring = True
     
    
-    add_new_event(Event(event_date, event_name, no_guests, location, description, recurring))
-    return redirect('/events')
+    
   
