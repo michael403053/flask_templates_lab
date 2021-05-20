@@ -20,10 +20,10 @@ def add_new_event_from_form():
     location = request.form['location']
     description = request.form['description']
 
-    
     if 'recurring' in request.form.keys():
         recurring = True
-    else: recurring = False
+    else: 
+        recurring = False
 
     add_new_event(Event(event_date, event_name, no_guests, location, description, recurring))
     return redirect('/events')
@@ -32,21 +32,5 @@ def add_new_event_from_form():
 @app.route("/events/delete/<index>")
 def delete_event_button(index):
     remove_event(events[int(index)])
-
-
-    # for event in events:
-    #     if event.name == 
-  
     return redirect('/events')
-
-
-
-
-    #if request.form['recurring'] == True:
-
-    #     recurring = False
-    # else: recurring = True
-    
-   
-    
   

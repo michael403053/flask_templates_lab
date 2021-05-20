@@ -3,9 +3,9 @@
 {%block content%}
     <h1>My Event List</h1>
     {%for event in events%}
-    <div>
+    <div class="main_list">
         <p>
-            {{ event.name }} : {{event.date}} : {{event.no_guests}} : {{event.location}} : {{event.description}} : 
+            <b>{{ event.name }}</b>: {{event.date}} : {{event.no_guests}} : {{event.location}} : {{event.description}} : 
             {%if event.recurring == True:%}
                 <span>&#128260</span>
             {% else %}
